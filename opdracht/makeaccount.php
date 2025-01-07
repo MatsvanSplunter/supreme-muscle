@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-image: url('<?php echo 'https://cdn.discordapp.com/attachments/1206520878892974131/1206977915917439066/join_s.jpg?ex=65ddf8c7&is=65cb83c7&hm=92341da5e91724876e3d93618ef17cf7ff16fe3fb6a9cdbd7d96eae2ed5e5a7c&'; ?>');
+            background-image: url('img/register.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
