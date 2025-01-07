@@ -45,7 +45,7 @@ try {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-image: url('<?php echo 'https://cdn.discordapp.com/attachments/1206520878892974131/1206970644529553438/OIP.png?ex=65ddf202&is=65cb7d02&hm=8d9c01e71f551495cb03f3dc7afde6c4d40638a2c0fb3a3a314235b9c8e64b3e&'; ?>');
+            background-image: url('img/background_home_page.webp');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
