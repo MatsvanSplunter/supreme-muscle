@@ -9,7 +9,7 @@
   <style>
     /* CSS-stijl voor achtergrondfoto */
     body {
-      background-image: url('https://cdn.discordapp.com/attachments/1146762352000253994/1206941458691653692/background_home_page.webp?ex=65ddd6d3&is=65cb61d3&hm=4bcb2f5273a81e41bc40e42d9ed4f9fd5a19bf4d5f7f786607a0c9ac0bfaa48d');
+      background-image: url('img/start.jpg');
       background-size: cover; /* Zorg ervoor dat de afbeelding de volledige achtergrond bedekt */
       background-repeat: no-repeat; /* Voorkomt dat de afbeelding herhaalt */
       height: 100vh; /* Hiermee maak je de afbeelding even groot als het venster van de browser */
