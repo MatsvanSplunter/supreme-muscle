@@ -1,39 +1,33 @@
 <?php
-
 $dbhost = "localhost";
 $dbname = "herorankings";
 $dbuser = "bit_academy";
 $dbpass = "bit_academy";
 
-$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
 try {
-    session_start();
-    $_SESSION['account'] = '';
-    if (isset($_POST['naam']) && $_POST['naam'] != "") {
-        $stmt = $pdo->prepare('SELECT * FROM accounts WHERE id = (SELECT MAX(id) FROM accounts)');
-        $stmt->execute([]);
-        $id = $stmt->fetch();
-        $run = true;
-        for ($i = 1; $run == true; $i++) {
-            $stmt = $pdo->prepare('SELECT * FROM accounts WHERE id = ?');
-            $stmt->execute([$i]);
-            $account = $stmt->fetch();
-            if ($_POST['naam'] == $account['gebruikersnaam']) {
-                if ($_POST['ww'] == $account['wachtwoord'] && $_POST['ww'] != '') {
-                    session_name("account");
-                    $_SESSION['account'] = $_POST['naam'];
-                    header("location: index.php");
-                }
-            }
-        }
-        echo "<h1 style='color: white;'>This username does not exist</h1>";
-    }
-} catch (Error) {
-}
+    $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    session_start();
+
+    if (isset($_POST['naam']) && isset($_POST['ww']) && $_POST['naam'] != "" && $_POST['ww'] != "") {
+        $stmt = $pdo->prepare('SELECT * FROM accounts WHERE gebruikersnaam = ?');
+        $stmt->execute([$_POST['naam']]);
+        $account = $stmt->fetch();
+
+        if ($account && password_verify($_POST['ww'], $account['wachtwoord'])) {
+            $_SESSION['account'] = $account['gebruikersnaam'];
+            header("Location: index.php");
+            exit;
+        } else {
+            echo "<h1 style='color: white;'>Invalid username or password</h1>";
+        }
+    }
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
