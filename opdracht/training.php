@@ -65,7 +65,7 @@ try {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-image: url('https://cdn.discordapp.com/attachments/1172090829419065405/1207332504562835516/sdojqoisd.jpg?ex=65df4304&is=65ccce04&hm=16d7e5431217ef3fc50e92f02907c105869d6602065803eea051e444ae68b140');
+            background-image: url('img/training.png');
             background-size: cover;
             background-position: center;
             height: 100vh;
